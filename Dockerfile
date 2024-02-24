@@ -17,7 +17,7 @@ RUN curl -fsSL https://deb.nodesource.com/setup_20.x | bash - && \
     apt-get install -y nodejs
 
 # poetry
-ENV PATH="/root/.local/bin:$PATH"
+ENV POETRY_HOME="/usr/local"
 RUN curl -sSL https://install.python-poetry.org | python3 -
 
 WORKDIR /app
