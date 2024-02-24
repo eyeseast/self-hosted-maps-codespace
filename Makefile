@@ -12,6 +12,12 @@ install:
 	poetry install
 	npm ci
 
+build:
+	docker build . -t self-hosted-maps:latest
+
+container:
+	docker run --rm -it self-hosted-maps:latest
+
 tiles: public/baltimore.pmtiles public/trees.pmtiles
 
 trees: $(DB) data/trees.ndjson
@@ -20,13 +26,15 @@ trees: $(DB) data/trees.ndjson
 fonts:
 	wget https://github.com/protomaps/basemaps-assets/archive/refs/heads/main.zip
 	unzip main.zip
+	mv basemaps-assets-main/fonts public/fonts
+	rm -r basemaps-assets-main main.zip
 
 run:
 	# https://docs.datasette.io/en/stable/settings.html#configuration-directory-mode
 	npm run dev -- --open & poetry run datasette serve . --load-extension spatialite -h 0.0.0.0
 
 clean:
-	rm -f $(DB) $(DB)-shm $(DB)-wal public/*.pmtiles
+	rm -rf $(DB) $(DB)-shm $(DB)-wal public/*.pmtiles public/*.mbtiles public/fonts
 
 data/trees.ndjson:
 	poetry run ./download.py
