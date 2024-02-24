@@ -1,0 +1,17 @@
+{
+  "name": "self-hosted-maps",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite --host",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "devDependencies": {
+    "maplibre-gl": "^3.6.2",
+    "pmtiles": "^2.11.0",
+    "protomaps-themes-base": "^2.0.0-alpha.4",
+    "vite": "^5.1.0"
+  }
+}
