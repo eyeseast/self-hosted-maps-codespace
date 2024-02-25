@@ -24,7 +24,8 @@ WORKDIR /app
 
 COPY . /app/
 
-RUN npm ci && poetry install
+RUN npm ci
+RUN poetry install
 
 EXPOSE 8001
 EXPOSE 5173
