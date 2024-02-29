@@ -1,6 +1,6 @@
 FROM mcr.microsoft.com/devcontainers/base:jammy
 
-RUN apt-get update -y && apt-get install -y build-essential libsqlite3-dev zlib1g-dev wget python3-dev libspatialite-dev
+RUN apt-get update -y && apt-get install -y build-essential libsqlite3-dev zlib1g-dev wget python3-dev libsqlite3-mod-spatialite
 
 # tippecanoe
 RUN git clone https://github.com/felt/tippecanoe.git && \
