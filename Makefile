@@ -9,7 +9,7 @@ TODAY = $(shell date +%Y%m%d)
 PMTILES_BUILD = https://build.protomaps.com/$(TODAY).pmtiles
 
 install:
-	poetry install
+	poetry install --no-root
 	npm ci
 
 build:
