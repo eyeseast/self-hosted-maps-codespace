@@ -55,6 +55,7 @@ Once Python and NodeJS are configured, run `make install` to download dependenci
 tl;dr
 
 ```sh
+make install
 make tiles
 make fonts
 npm run dev
@@ -68,7 +69,7 @@ If you want to dig into Baltimore's tree inventory, you can build a SpatiaLite d
 
 ```sh
 make trees # build the database
-make run # run datasette
+make ds # run datasette
 ```
 
 Have fun.

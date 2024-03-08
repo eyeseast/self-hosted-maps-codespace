@@ -33,6 +33,9 @@ run:
 	# https://docs.datasette.io/en/stable/settings.html#configuration-directory-mode
 	npm run dev -- --open & poetry run datasette serve . --load-extension spatialite -h 0.0.0.0
 
+ds:
+	poetry run datasette serve . --load-extension spatialite -h 0.0.0.0
+
 clean:
 	rm -rf $(DB) $(DB)-shm $(DB)-wal public/*.pmtiles public/*.mbtiles public/fonts
 
