@@ -63,6 +63,8 @@ npm run dev
 
 We have two sets of tiles: the underlying street map, and the point data for trees. Running `make tiles` will get both. Street tiles are extracted from today's [Protomaps build](https://maps.protomaps.com/builds/). We use [tippecanoe](https://github.com/felt/tippecanoe) to turn tree data into tiles.
 
+NOTE: if you run into an error with `make tiles`, with a 404 error from build.protomaps.com, you may be one day ahead of the available protomap builds from [https://maps.protomaps.com/builds/](). To remedy, edit the `TODAY` variable in the `Makefile` to be a valid day that will call an available pmtiles set from [https://maps.protomaps.com/builds/].
+
 ## Exploring tree data with Datasette
 
 If you want to dig into Baltimore's tree inventory, you can build a SpatiaLite database and explore it with Datasette.
